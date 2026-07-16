@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 /* Font family : plus jakarta sans */
+
+/* Varian Normal */
 @font-face {
   font-family: "Plus Jakarta Sans";
   src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Regular.ttf")
@@ -43,6 +45,58 @@
     format("truetype");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
+}
+
+/* --- VARIAN ITALIC --- */
+
+/* Regular Italic (400) */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Italic.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium Italic (500) */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-MediumItalic.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* SemiBold Italic (600) */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold Italic (700) */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-BoldItalic.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ExtraBold Italic (800) */
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: italic;
   font-display: swap;
 }
 
