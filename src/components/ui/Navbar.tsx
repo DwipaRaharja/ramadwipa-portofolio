@@ -1,13 +1,7 @@
 import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useRef, useEffect } from "react";
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "My Project", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+import { navLinks } from "../../data/navigation";
 
 const Navbar = () => {
   // this for detect menu mobile
@@ -24,11 +18,7 @@ const Navbar = () => {
     // this for detect click outside menu mobile
     const handleClickOutside = (event: MouseEvent) => {
       // if menu open, and click outside menu mobile, then close menu mobile
-      if (
-        isMobileMenuOpen &&
-        navRef.current &&
-        !navRef.current.contains(event.target as Node)
-      ) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -106,7 +96,7 @@ const Navbar = () => {
         <button
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
-          id={isMobileMenuOpen ? "mobile-menu-open" : "mobile-menu-close"}
+          id="mobile-menu"
           aria-label="Toggle mobile menu"
           aria-labelledby="mobile-menu-open mobile-menu-close"
           className="md:hidden p-2 text-text-main cursor-pointer"
