@@ -5,7 +5,7 @@
 /* Varian Normal */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Regular.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Regular.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -14,7 +14,7 @@
 /* Medium (500) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Medium.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Medium.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -23,7 +23,7 @@
 /* SemiBold (600) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-SemiBold.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-SemiBold.ttf")
     format("truetype");
   font-weight: 600;
   font-style: normal;
@@ -32,7 +32,7 @@
 /* Bold (700) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Bold.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -41,7 +41,7 @@
 /* ExtraBold (800) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-ExtraBold.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-ExtraBold.ttf")
     format("truetype");
   font-weight: 800;
   font-style: normal;
@@ -53,7 +53,7 @@
 /* Regular Italic (400) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Italic.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-Italic.ttf")
     format("truetype");
   font-weight: 400;
   font-style: italic;
@@ -63,7 +63,7 @@
 /* Medium Italic (500) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-MediumItalic.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-MediumItalic.ttf")
     format("truetype");
   font-weight: 500;
   font-style: italic;
@@ -73,7 +73,7 @@
 /* SemiBold Italic (600) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
     format("truetype");
   font-weight: 600;
   font-style: italic;
@@ -83,7 +83,7 @@
 /* Bold Italic (700) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-BoldItalic.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-BoldItalic.ttf")
     format("truetype");
   font-weight: 700;
   font-style: italic;
@@ -93,7 +93,7 @@
 /* ExtraBold Italic (800) */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
+  src: url("../assets/fonts/plus_jakarta_sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
     format("truetype");
   font-weight: 800;
   font-style: italic;
@@ -107,6 +107,8 @@
   /* color style */
   --color-primary: #3c63c5;
   --color-bg-main: #f0f4fe;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
 }
 
 /* --- 3. RESET DASAR --- */
@@ -114,6 +116,10 @@ body {
   background-color: var(--color-bg-main);
   color: var(--color-text-main);
   overflow-x: hidden;
-  /* Menerapkan font Plus Jakarta Sans ke seluruh halaman */
   font-family: var(--font-sans);
+
+  /* Anti-blur: membuat font lebih tajam di semua browser */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
