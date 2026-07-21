@@ -48,7 +48,10 @@ const Navbar = () => {
           whileTap={{ scale: 0.98 }}
           className="cursor-pointer"
         >
-          <a href="#home" className="italic font-bold text-xl">
+          <a
+            href="#home"
+            className="italic font-bold text-md md:text-lg lg:text-xl"
+          >
             Ramadwipa.
           </a>
         </motion.div>

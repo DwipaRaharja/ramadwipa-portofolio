@@ -109,6 +109,8 @@
   --color-bg-main: #f0f4fe;
   --color-text-main: #0f172a;
   --color-text-muted: #64748b;
+
+  --text-shadow-heading: 0 4px 4px rgba(0, 0, 0, 0.35);
 }
 
 /* --- 3. RESET DASAR --- */
