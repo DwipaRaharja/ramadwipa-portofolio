@@ -73,7 +73,7 @@ const IconWrapper = ({ Icon }: { Icon: ComponentType<IconProps> }) => (
 const Hero = () => {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden px-4 pt-24 pb-2 sm:px-6 sm:pb-24 lg:pb-5">
+      <section className="relative mb-10 overflow-hidden px-10 pt-24 pb-2 sm:px-6 sm:pb-24 md:min-h-screen lg:pb-5">
         {/* decoration circle */}
         <DecorativeGlow
           className="top-36 -right-24 size-48 sm:right-0 sm:size-56 lg:top-40 lg:right-50 lg:size-64"
@@ -196,7 +196,7 @@ const Hero = () => {
               <span className="text-primary block h-10 text-5xl leading-none sm:text-6xl">
                 &ldquo;
               </span>
-              <p className="text-text-main leading-relaxed">
+              <p className="text-text-main text-justify leading-relaxed">
                 Focused on problem-solving and architecting scalable systems. I
                 build robust full-stack applications designed for long-term
                 growth.
@@ -275,6 +275,11 @@ const Hero = () => {
               }}
               whileTap={{
                 scale: 0.93,
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                },
               }}
               transition={{
                 type: "spring",
@@ -301,6 +306,11 @@ const Hero = () => {
               }}
               whileTap={{
                 scale: 0.93,
+                transition: {
+                  type: "spring",
+                  stiffness: 1000,
+                  damping: 20,
+                },
               }}
               transition={{
                 type: "spring",
