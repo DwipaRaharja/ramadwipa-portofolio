@@ -240,7 +240,7 @@ const Hero = () => {
               }}
               className="order-3 max-w-full justify-self-center lg:justify-self-start"
             >
-              <ul className="border-primary text-primary flex items-center justify-center gap-2 rounded-full border-3 bg-white px-3 py-2 sm:gap-4 sm:px-5 sm:py-3">
+              <ul className="border-primary text-primary flex items-center justify-center gap-2 rounded-full border-3 bg-white/12 px-3 py-2 sm:gap-4 sm:px-5 sm:py-3">
                 {socialLink.map((link) => (
                   <li key={link.href}>
                     <motion.a
