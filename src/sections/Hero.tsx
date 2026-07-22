@@ -79,7 +79,7 @@ const Hero = () => {
           className="top-36 -right-24 size-48 sm:right-0 sm:size-56 lg:top-40 lg:right-50 lg:size-64"
           initial={{
             opacity: 0,
-            scale: 0,
+            scale: 0.85,
           }}
           animate={{
             opacity: 1,
@@ -88,15 +88,15 @@ const Hero = () => {
           transition={{
             type: "spring",
             stiffness: 180,
-            damping: 12,
-            delay: 1.3,
+            damping: 20,
+            delay: 1.1,
           }}
         />
         <DecorativeGlow
           className="top-120 -left-14 size-48 sm:left-0 sm:size-56 lg:top-105 lg:left-64 lg:size-64"
           initial={{
             opacity: 0,
-            scale: 0,
+            scale: 0.85,
           }}
           animate={{
             opacity: 1,
@@ -105,8 +105,8 @@ const Hero = () => {
           transition={{
             type: "spring",
             stiffness: 180,
-            damping: 12,
-            delay: 1,
+            damping: 20,
+            delay: 0.9,
           }}
         />
 
@@ -115,7 +115,7 @@ const Hero = () => {
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0,
+              scale: 0.85,
             }}
             animate={{
               opacity: 1,
@@ -124,8 +124,8 @@ const Hero = () => {
             transition={{
               type: "spring",
               stiffness: 180,
-              damping: 12,
-              delay: 0.8,
+              damping: 20,
+              delay: 0.2,
             }}
             className="bg-primary w-fit rounded-full px-5 py-1.5 sm:px-6"
           >
@@ -138,7 +138,7 @@ const Hero = () => {
             <motion.h1
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.85,
               }}
               animate={{
                 opacity: 1,
@@ -147,8 +147,8 @@ const Hero = () => {
               transition={{
                 type: "spring",
                 stiffness: 180,
-                damping: 12,
-                delay: 0.8,
+                damping: 20,
+                delay: 0.35,
               }}
               className="lg:text-shadow-heading text-3xl leading-tight font-bold text-shadow-lg sm:text-4xl md:text-5xl lg:text-7xl"
             >
@@ -157,17 +157,14 @@ const Hero = () => {
               <motion.span
                 initial={{
                   opacity: 0,
-                  scale: 0,
                 }}
                 animate={{
                   opacity: 1,
-                  scale: 1,
                 }}
                 transition={{
-                  type: "spring",
-                  stiffness: 180,
-                  damping: 12,
-                  delay: 0.8,
+                  duration: 0.5,
+                  ease: "easeOut",
+                  delay: 0.6,
                 }}
                 className="text-4xl leading-tight font-medium sm:text-5xl md:text-6xl lg:text-8xl"
               >
@@ -182,7 +179,7 @@ const Hero = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.85,
               }}
               animate={{
                 opacity: 1,
@@ -191,8 +188,8 @@ const Hero = () => {
               transition={{
                 type: "spring",
                 stiffness: 180,
-                damping: 12,
-                delay: 0.8,
+                damping: 20,
+                delay: 0.5,
               }}
               className="order-2 w-full max-w-sm text-center lg:order-1 lg:max-w-xs lg:justify-self-end lg:text-left"
             >
@@ -210,7 +207,7 @@ const Hero = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.85,
               }}
               animate={{
                 opacity: 1,
@@ -219,8 +216,8 @@ const Hero = () => {
               transition={{
                 type: "spring",
                 stiffness: 180,
-                damping: 12,
-                delay: 0.8,
+                damping: 20,
+                delay: 0.65,
               }}
               className="order-1 size-[clamp(14rem,65vw,20rem)] overflow-hidden rounded-full border-2 border-gray-300 bg-[linear-gradient(180deg,#F0F4FE_30%,#3C63C5_100%)] lg:order-2 lg:size-92"
             />
@@ -229,7 +226,7 @@ const Hero = () => {
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.85,
               }}
               animate={{
                 opacity: 1,
@@ -238,7 +235,7 @@ const Hero = () => {
               transition={{
                 type: "spring",
                 stiffness: 180,
-                damping: 12,
+                damping: 20,
                 delay: 0.8,
               }}
               className="order-3 max-w-full justify-self-center lg:justify-self-start"
@@ -265,12 +262,25 @@ const Hero = () => {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:mt-6">
             <motion.button
-              whileHover={{
+              initial={{
+                opacity: 0,
+                scale: 0.85,
+              }}
+              animate={{
                 opacity: 1,
-                scale: 0.95,
+                scale: 1,
+              }}
+              whileHover={{
+                scale: 0.96,
               }}
               whileTap={{
-                scale: 0.95,
+                scale: 0.93,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 0.9,
               }}
               className="border-primary text-primary hover:bg-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-white sm:px-5 sm:text-base"
             >
@@ -278,12 +288,25 @@ const Hero = () => {
               <PlayCircleIcon className="size-7" weight="fill" />
             </motion.button>
             <motion.button
-              whileHover={{
+              initial={{
+                opacity: 0,
+                scale: 0.85,
+              }}
+              animate={{
                 opacity: 1,
-                scale: 0.95,
+                scale: 1,
+              }}
+              whileHover={{
+                scale: 0.96,
               }}
               whileTap={{
-                scale: 0.95,
+                scale: 0.93,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: 1,
               }}
               className="border-primary text-primary hover:bg-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-white sm:px-5 sm:text-base"
             >
@@ -297,8 +320,8 @@ const Hero = () => {
       <div className="bg-primary overflow-hidden py-5">
         <motion.div
           className="flex w-max"
-          initial={{ x: "-50%" }}
-          animate={{ x: "-0%" }}
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
           transition={{
             duration: 20,
             ease: "linear",
