@@ -68,10 +68,10 @@ const AboutMe = () => {
             }}
             className="text-justify text-xl"
           >
-            I'm a Full Stack Developer passionate about building scalable
-            solutions. I design relational databases, develop clean backend
-            logic, and create intuitive user interfaces while focusing on DRY,
-            maintainable code.
+            I&apos;m a Full Stack Developer who enjoys turning business
+            challenges into clear, reliable web solutions. I work across user
+            interfaces, backend logic, and databases, so each part of the
+            product supports the same practical goal.
           </motion.p>
 
           {/* My tech stack */}

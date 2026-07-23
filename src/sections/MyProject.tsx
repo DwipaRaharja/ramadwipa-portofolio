@@ -75,7 +75,7 @@ const MyProject = () => {
             }}
             className="text-3xl font-bold text-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            My Project
+            Featured Client Project
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -89,8 +89,8 @@ const MyProject = () => {
             }}
             className="text-sm leading-relaxed text-black sm:text-base lg:text-lg"
           >
-            A real-world solution built to solve real business challenges with
-            scalable architecture and clean development practices.
+            See how a business challenge was turned into a practical system that
+            supports daily operations.
           </motion.p>
         </motion.div>
 

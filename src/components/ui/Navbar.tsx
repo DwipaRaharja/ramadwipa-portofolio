@@ -69,8 +69,8 @@ const Navbar = () => {
         </motion.div>
 
         {/* Menu Desktop */}
-        <div className="hidden items-center gap-10 md:flex">
-          <ul className="flex items-center gap-10">
+        <div className="hidden items-center gap-8 lg:flex">
+          <ul className="flex items-center gap-7 xl:gap-9">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <MotionLink
@@ -101,7 +101,7 @@ const Navbar = () => {
             to="/#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary flex cursor-pointer items-center gap-2 rounded-4xl px-3 py-3 text-center font-medium text-white md:py-1.5"
+            className="bg-primary flex cursor-pointer items-center gap-2 rounded-4xl px-4 py-2 text-center font-medium text-white"
           >
             Let's Talk <ArrowUpRight size={20} />
           </MotionLink>
@@ -115,7 +115,7 @@ const Navbar = () => {
           aria-label={
             isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
           }
-          className="text-text-main cursor-pointer p-2 md:hidden"
+          className="text-text-main cursor-pointer p-2 lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <List size={28} />}
@@ -130,7 +130,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden md:hidden"
+            className="overflow-hidden lg:hidden"
           >
             <ul className="mt-4 flex flex-col gap-4 border-t border-neutral-500/30 pt-4 pb-2">
               {navLinks.map((link) => (

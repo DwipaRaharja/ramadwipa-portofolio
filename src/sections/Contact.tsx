@@ -1,14 +1,13 @@
 import type { FormEvent } from "react";
-import {
-  PaperPlaneTiltIcon,
-  WhatsappLogoIcon,
-  MailboxIcon,
-} from "@phosphor-icons/react";
+import { WhatsappLogoIcon, MailboxIcon } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import DecorativeGlow from "../components/ui/DecorativeGlow";
 
 const emailAddress = "ramadwipa168@gmail.com";
 const whatsappNumber = "62877767444538";
+const directWhatsappMessage = encodeURIComponent(
+  "Hi Ramadwipa, I'd like to discuss a web project for my business.",
+);
 
 const inputClassName =
   "w-full rounded-2xl border-2 border-primary bg-transparent px-4 py-3 text-sm text-text-main outline-none transition-shadow placeholder:text-text-muted/60 focus:shadow-[0_0_0_3px_rgba(60,99,197,0.14)] sm:text-base";
@@ -21,16 +20,23 @@ const Contact = () => {
     const firstName = String(formData.get("firstName") ?? "");
     const lastName = String(formData.get("lastName") ?? "");
     const senderEmail = String(formData.get("email") ?? "");
-    const subject = String(formData.get("subject") ?? "Portfolio inquiry");
+    const subject = String(formData.get("subject") ?? "Web project inquiry");
     const message = String(formData.get("message") ?? "");
-    const body = [
+    const whatsappMessage = [
+      "Hi Ramadwipa, I'd like to discuss a project.",
+      "",
       `Name: ${firstName} ${lastName}`,
       `Email: ${senderEmail}`,
+      `Project: ${subject}`,
       "",
       message,
     ].join("\n");
 
-    window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   };
 
   return (
@@ -66,12 +72,11 @@ const Contact = () => {
           className="mx-auto max-w-3xl text-center"
         >
           <h2 className="text-3xl font-bold text-shadow-lg sm:text-4xl md:text-5xl lg:text-6xl">
-            Let&apos;s Build Something Together
+            Ready to Improve Your Business?
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-black sm:text-base">
-            Have a business idea, need a modern website, or want to build a
-            custom web application? I&apos;d love to hear about your project and
-            help turn your ideas into reality.
+            Tell me what you need, what is slowing your business down, or what
+            you want to build. We can start with a simple conversation.
           </p>
         </motion.div>
 
@@ -147,8 +152,8 @@ const Contact = () => {
             transition={{ type: "spring", stiffness: 350, damping: 25 }}
             className="bg-primary hover:bg-primary/90 focus-visible:outline-primary flex w-full cursor-pointer items-center justify-center gap-2 rounded-full px-5 py-3 font-bold text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 sm:col-span-2"
           >
-            Send To Me
-            <PaperPlaneTiltIcon className="size-5" weight="fill" />
+            Discuss via WhatsApp
+            <WhatsappLogoIcon className="size-5" weight="fill" />
           </motion.button>
         </motion.form>
 
@@ -187,7 +192,7 @@ const Contact = () => {
           </motion.a>
 
           <motion.a
-            href={`https://wa.me/${whatsappNumber}`}
+            href={`https://wa.me/${whatsappNumber}?text=${directWhatsappMessage}`}
             target="_blank"
             rel="noreferrer"
             variants={{

@@ -1,8 +1,15 @@
 import { motion } from "motion/react";
-import { HandWavingIcon, PlayCircleIcon } from "@phosphor-icons/react";
+import {
+  ArrowRightIcon,
+  CheckCircleIcon,
+  CodeIcon,
+  WhatsappLogoIcon,
+} from "@phosphor-icons/react";
 import DecorativeGlow from "../components/ui/DecorativeGlow";
-import SocialLinks from "../components/ui/SocialLinks";
 import SkillItems from "../components/ui/SkillItems";
+
+const whatsappUrl =
+  "https://wa.me/62877767444538?text=Hi%20Ramadwipa%2C%20I%27d%20like%20to%20discuss%20a%20web%20project%20for%20my%20business.";
 
 const Hero = () => {
   return (
@@ -66,9 +73,9 @@ const Hero = () => {
             }}
             className="bg-primary w-fit rounded-full px-5 py-1.5 sm:px-6"
           >
-            <span className="flex items-center justify-center gap-2 text-base font-bold text-white sm:text-lg">
-              <HandWavingIcon width={24} height={24} weight="fill" />
-              Hello
+            <span className="flex items-center justify-center gap-2 text-sm font-bold text-white sm:text-base">
+              <span className="size-2 rounded-full bg-emerald-300" />
+              Available for freelance projects
             </span>
           </motion.div>
           <div className="relative z-10 mt-3 text-center sm:mt-4">
@@ -89,8 +96,8 @@ const Hero = () => {
               }}
               className="lg:text-shadow-heading text-3xl leading-tight font-bold text-shadow-lg sm:text-4xl md:text-5xl lg:text-7xl"
             >
-              I'm <span className="text-primary">Ramadwipa,</span>
-              <br />
+              I Build <span className="text-primary">Web Applications</span>
+              <br className="hidden sm:block" />{" "}
               <motion.span
                 initial={{
                   opacity: 0,
@@ -103,9 +110,9 @@ const Hero = () => {
                   ease: "easeOut",
                   delay: 0.6,
                 }}
-                className="text-4xl leading-tight font-medium sm:text-5xl md:text-6xl lg:text-8xl"
+                className="text-3xl leading-tight font-medium sm:text-4xl md:text-5xl lg:text-7xl"
               >
-                Full Stack Developer
+                That Help Businesses Work Smarter
               </motion.span>
             </motion.h1>
           </div>
@@ -130,13 +137,9 @@ const Hero = () => {
               }}
               className="order-2 w-full max-w-sm text-center lg:order-1 lg:max-w-xs lg:justify-self-end lg:text-left"
             >
-              <span className="text-primary block h-10 text-5xl leading-none sm:text-6xl">
-                &ldquo;
-              </span>
-              <p className="text-text-main text-justify leading-relaxed">
-                Focused on problem-solving and architecting scalable systems. I
-                build robust full-stack applications designed for long-term
-                growth.
+              <p className="text-text-main text-center leading-relaxed lg:text-left">
+                I help businesses turn manual processes and ideas into
+                responsive websites and practical web-based systems.
               </p>
             </motion.div>
 
@@ -156,8 +159,12 @@ const Hero = () => {
                 damping: 20,
                 delay: 0.65,
               }}
-              className="order-1 size-[clamp(14rem,65vw,20rem)] overflow-hidden rounded-full border-2 border-gray-300 bg-[linear-gradient(180deg,#F0F4FE_30%,#3C63C5_100%)] lg:order-2 lg:size-92"
-            />
+              className="order-1 flex size-[clamp(14rem,65vw,20rem)] items-center justify-center overflow-hidden rounded-full border-2 border-gray-300 bg-[linear-gradient(180deg,#F0F4FE_30%,#3C63C5_100%)] lg:order-2 lg:size-92"
+            >
+              <div className="flex size-32 items-center justify-center rounded-full border border-white/60 bg-white/20 text-white shadow-[0_15px_40px_rgba(15,23,42,0.16)] backdrop-blur-sm sm:size-40">
+                <CodeIcon className="size-16 sm:size-20" weight="bold" />
+              </div>
+            </motion.div>
 
             {/* third content (social media)*/}
             <motion.div
@@ -175,15 +182,31 @@ const Hero = () => {
                 damping: 20,
                 delay: 0.8,
               }}
-              className="order-3 max-w-full justify-self-center lg:justify-self-start"
+              className="order-3 max-w-sm justify-self-center lg:justify-self-start"
             >
-              <SocialLinks className="bg-white/12" />
+              <ul className="space-y-4 text-sm font-semibold sm:text-base">
+                {[
+                  "Focused on business needs",
+                  "Responsive on every device",
+                  "Built for long-term use",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckCircleIcon
+                      className="text-primary size-6 shrink-0"
+                      weight="fill"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:mt-6">
             <motion.a
-              href="#projects"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
               initial={{
                 opacity: 0,
                 scale: 0.85,
@@ -209,13 +232,13 @@ const Hero = () => {
                 damping: 20,
                 delay: 0.9,
               }}
-              className="border-primary text-primary hover:bg-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-white sm:px-5 sm:text-base"
+              className="bg-primary hover:bg-primary/90 border-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-5 py-2.5 text-sm font-bold text-white transition-colors duration-300 sm:px-6 sm:text-base"
             >
-              My Project
-              <PlayCircleIcon className="size-7" weight="fill" />
+              Discuss Your Project
+              <WhatsappLogoIcon className="size-6" weight="fill" />
             </motion.a>
             <motion.a
-              href="#about"
+              href="#projects"
               initial={{
                 opacity: 0,
                 scale: 0.85,
@@ -241,10 +264,10 @@ const Hero = () => {
                 damping: 20,
                 delay: 1,
               }}
-              className="border-primary text-primary hover:bg-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-4 py-2 text-sm font-bold transition-colors duration-300 hover:text-white sm:px-5 sm:text-base"
+              className="border-primary text-primary hover:bg-primary flex w-fit cursor-pointer items-center gap-2 rounded-full border-3 px-5 py-2.5 text-sm font-bold transition-colors duration-300 hover:text-white sm:px-6 sm:text-base"
             >
-              About Me
-              <PlayCircleIcon className="size-7" weight="fill" />
+              View My Work
+              <ArrowRightIcon className="size-6" weight="bold" />
             </motion.a>
           </div>
         </motion.div>

@@ -14,10 +14,11 @@ const Footer = () => {
             <span className="text-3xl">Ramadwipa.</span>
           </Link>
           <p className="mt-2 text-xl font-medium sm:text-2xl">
-            Full Stack Developer
+            Web Solutions for Business
           </p>
           <p className="mt-3 max-w-sm text-base leading-relaxed text-white/80 sm:text-lg">
-            Building digital solutions for modern businesses.
+            Responsive websites and practical web applications built around real
+            business needs.
           </p>
         </div>
 
