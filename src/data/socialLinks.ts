@@ -14,24 +14,25 @@ export type SocialLinkItem = {
 };
 
 const socialLinks: SocialLinkItem[] = [
-  { 
-    icon: LinkedinLogoIcon, 
+  {
+    icon: LinkedinLogoIcon,
     href: "https://www.linkedin.com/in/rama-dwipa-a81423412/",
-    ariaLabel: "LinkedIn"
+    ariaLabel: "LinkedIn",
   },
-  { 
-    icon: FacebookLogoIcon, 
+  {
+    icon: FacebookLogoIcon,
     href: "https://www.facebook.com/ramaraharja.ramaraharja/",
-    ariaLabel: "Facebook"
+    ariaLabel: "Facebook",
   },
-  { icon: InstagramLogoIcon,
+  {
+    icon: InstagramLogoIcon,
     href: "https://www.instagram.com/ramadwipa16/",
-    ariaLabel: "Instagram"
+    ariaLabel: "Instagram",
   },
-  { 
+  {
     icon: TiktokLogoIcon,
     href: "https://www.tiktok.com/@ramawipa",
-    ariaLabel: "TikTok" 
+    ariaLabel: "TikTok",
   },
   {
     icon: GithubLogo,

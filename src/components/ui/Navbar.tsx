@@ -1,7 +1,10 @@
 import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { navLinks } from "../../data/navigation";
+
+const MotionLink = motion.create(Link);
 
 const Navbar = () => {
   // this for detect menu mobile
@@ -57,12 +60,12 @@ const Navbar = () => {
           whileTap={{ scale: 0.98 }}
           className="cursor-pointer"
         >
-          <a
-            href="#home"
+          <Link
+            to="/#home"
             className="text-md font-bold italic md:text-lg lg:text-xl"
           >
             Ramadwipa.
-          </a>
+          </Link>
         </motion.div>
 
         {/* Menu Desktop */}
@@ -70,8 +73,8 @@ const Navbar = () => {
           <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <motion.a
-                  href={link.href}
+                <MotionLink
+                  to={link.href}
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
@@ -90,18 +93,18 @@ const Navbar = () => {
                     }}
                     className="bg-primary absolute bottom-0 left-0 h-0.5 w-full origin-left"
                   />
-                </motion.a>
+                </MotionLink>
               </li>
             ))}
           </ul>
-          <motion.a
-            href="#contact"
+          <MotionLink
+            to="/#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-primary flex cursor-pointer items-center gap-2 rounded-4xl px-3 py-3 text-center font-medium text-white md:py-1.5"
           >
             Let's Talk <ArrowUpRight size={20} />
-          </motion.a>
+          </MotionLink>
         </div>
 
         {/* Tombol Hamburger (Mobile) */}
@@ -132,24 +135,24 @@ const Navbar = () => {
             <ul className="mt-4 flex flex-col gap-4 border-t border-neutral-500/30 pt-4 pb-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="focus:text-primary block text-lg font-semibold transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <motion.a
-              href="#contact"
+            <MotionLink
+              to="/#contact"
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-primary flex w-fit cursor-pointer items-center gap-2 rounded-md py-3 text-lg font-semibold transition-colors duration-300 hover:text-blue-800"
             >
               Let's Talk <ArrowUpRight size={20} weight="bold" />
-            </motion.a>
+            </MotionLink>
           </motion.div>
         )}
       </AnimatePresence>

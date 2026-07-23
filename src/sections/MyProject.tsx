@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 import {
   SiGithub,
   SiInertia,
@@ -8,8 +9,11 @@ import {
   SiPhp,
   SiTailwindcss,
 } from "@icons-pack/react-simple-icons";
-import autoHubDashboard from "../assets/autohub-dashboard.png";
 import DecorativeGlow from "../components/ui/DecorativeGlow";
+import projects from "../data/projects";
+
+const MotionLink = motion.create(Link);
+const featuredProject = projects[0];
 
 const projectTech = [
   { name: "Laravel", icon: SiLaravel },
@@ -24,8 +28,8 @@ const DashboardPreview = () => {
   return (
     <div className="aspect-568/326 w-full overflow-hidden rounded-2xl border border-slate-900 bg-white">
       <img
-        src={autoHubDashboard}
-        alt="AutoHub used-car inventory dashboard"
+        src={featuredProject.coverImage}
+        alt={featuredProject.coverImageAlt}
         className="size-full object-cover object-top"
         loading="lazy"
       />
@@ -102,10 +106,10 @@ const MyProject = () => {
 
             <div className="mt-5 flex flex-1 flex-col sm:mt-6">
               <h3 className="text-text-main text-3xl font-bold sm:text-4xl">
-                AutoHub
+                {featuredProject.title}
               </h3>
               <p className="text-text-main mt-2 text-sm leading-relaxed sm:text-base">
-                Create a system to manage inventory in a used-car business.
+                {featuredProject.summary}
               </p>
 
               <div className="mt-6 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -123,10 +127,8 @@ const MyProject = () => {
                     </li>
                   ))}
                 </ul>
-                <motion.a
-                  href={autoHubDashboard}
-                  target="_blank"
-                  rel="noreferrer"
+                <MotionLink
+                  to={`/projects/${featuredProject.slug}`}
                   initial={{
                     opacity: 0,
                     scale: 0.85,
@@ -156,7 +158,7 @@ const MyProject = () => {
                 >
                   See Details
                   <ArrowRightIcon className="size-5" weight="bold" />
-                </motion.a>
+                </MotionLink>
               </div>
             </div>
           </motion.article>
