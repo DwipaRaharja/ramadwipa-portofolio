@@ -19,7 +19,7 @@ const AboutMe = () => {
               opacity: 1,
               scale: 1,
             }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               type: "spring",
               stiffness: 180,
@@ -39,7 +39,7 @@ const AboutMe = () => {
               opacity: 1,
               scale: 1,
             }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               type: "spring",
               stiffness: 180,
@@ -59,7 +59,7 @@ const AboutMe = () => {
               opacity: 1,
               scale: 1,
             }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{
               type: "spring",
               stiffness: 180,
@@ -68,10 +68,12 @@ const AboutMe = () => {
             }}
             className="text-justify text-xl"
           >
-            I&apos;m a Full Stack Developer who enjoys turning business
-            challenges into clear, reliable web solutions. I work across user
-            interfaces, backend logic, and databases, so each part of the
-            product supports the same practical goal.
+            I&apos;m{" "}
+            <strong className="text-primary font-bold">Ramadwipa</strong>, a
+            Full Stack Developer who enjoys turning business challenges into
+            clear, reliable web solutions. I work across user interfaces,
+            backend logic, and databases, so each part of the product supports
+            the same practical goal.
           </motion.p>
 
           {/* My tech stack */}
@@ -85,7 +87,7 @@ const AboutMe = () => {
                 opacity: 1,
                 x: 0,
               }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{
                 type: "spring",
                 stiffness: 180,
@@ -131,7 +133,7 @@ const AboutMe = () => {
                 opacity: 1,
                 x: 0,
               }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{
                 type: "spring",
                 stiffness: 180,

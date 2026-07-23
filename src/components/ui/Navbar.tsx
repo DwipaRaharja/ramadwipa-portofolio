@@ -75,23 +75,13 @@ const Navbar = () => {
               <li key={link.label}>
                 <MotionLink
                   to={link.href}
-                  initial="rest"
-                  whileHover="hover"
-                  animate="rest"
-                  className="hover:text-primary relative inline-block py-1 font-semibold transition-colors duration-300 focus-visible:ring"
+                  className="group hover:text-primary relative inline-block py-1 font-semibold transition-colors duration-300 focus-visible:ring"
                 >
                   {link.label}
 
-                  <motion.span
-                    variants={{
-                      rest: { scaleX: 0 },
-                      hover: { scaleX: 1 },
-                    }}
-                    transition={{
-                      duration: 0.25,
-                      ease: "easeOut",
-                    }}
-                    className="bg-primary absolute bottom-0 left-0 h-0.5 w-full origin-left"
+                  <span
+                    aria-hidden="true"
+                    className="bg-primary absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"
                   />
                 </MotionLink>
               </li>
