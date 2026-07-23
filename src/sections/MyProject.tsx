@@ -20,9 +20,9 @@ const projectTech = [
   { name: "GitHub", icon: SiGithub },
 ];
 
-function DashboardPreview() {
+const DashboardPreview = () => {
   return (
-    <div className="aspect-[568/326] w-full overflow-hidden rounded-2xl border border-slate-900 bg-white">
+    <div className="aspect-568/326 w-full overflow-hidden rounded-2xl border border-slate-900 bg-white">
       <img
         src={autoHubDashboard}
         alt="AutoHub used-car inventory dashboard"
@@ -31,13 +31,13 @@ function DashboardPreview() {
       />
     </div>
   );
-}
+};
 
-function MyProject() {
+const MyProject = () => {
   return (
     <section
-      id="MyProject"
-      className="relative min-h-screen overflow-hidden px-4 py-24 sm:px-6 lg:px-10"
+      id="projects"
+      className="relative isolate min-h-screen scroll-mt-24 overflow-hidden px-4 py-24 sm:px-6 lg:px-10"
     >
       <DecorativeGlow
         initial={{
@@ -96,7 +96,7 @@ function MyProject() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ type: "spring", stiffness: 140, damping: 22 }}
-            className="border-primary flex h-full flex-col rounded-tr-3xl rounded-bl-3xl border-2 bg-white/35 p-4 sm:p-5 lg:p-6"
+            className="border-primary flex h-full flex-col rounded-3xl border-2 bg-white/35 p-4 sm:p-5 lg:p-6"
           >
             <DashboardPreview />
 
@@ -123,7 +123,10 @@ function MyProject() {
                     </li>
                   ))}
                 </ul>
-                <motion.button
+                <motion.a
+                  href={autoHubDashboard}
+                  target="_blank"
+                  rel="noreferrer"
                   initial={{
                     opacity: 0,
                     scale: 0.85,
@@ -153,7 +156,7 @@ function MyProject() {
                 >
                   See Details
                   <ArrowRightIcon className="size-5" weight="bold" />
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.article>
@@ -168,7 +171,7 @@ function MyProject() {
               damping: 22,
               delay: 0.1,
             }}
-            className="border-primary flex h-full flex-col rounded-tr-3xl rounded-bl-3xl border-2 bg-white/35 p-6 sm:p-8"
+            className="border-primary flex h-full flex-col rounded-3xl border-2 bg-white/35 p-6 sm:p-8"
           >
             <h3 className="text-text-main text-lg font-bold sm:text-xl">
               Testimonial From Owner Telaga Berlian Motor
@@ -194,6 +197,6 @@ function MyProject() {
       </div>
     </section>
   );
-}
+};
 
 export default MyProject;

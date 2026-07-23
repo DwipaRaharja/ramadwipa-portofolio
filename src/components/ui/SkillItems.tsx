@@ -7,7 +7,11 @@ const skills = [
   "Focused Problem Solving",
 ];
 
-const SkillItems = ({ hidden = false }: { hidden?: boolean }) => (
+type SkillItemsProps = {
+  hidden?: boolean;
+};
+
+const SkillItems = ({ hidden = false }: SkillItemsProps) => (
   <div aria-hidden={hidden} className="flex shrink-0 items-center">
     {skills.map((skill) => (
       <div
@@ -17,7 +21,6 @@ const SkillItems = ({ hidden = false }: { hidden?: boolean }) => (
         <p className="text-xl font-bold whitespace-nowrap text-white">
           {skill}
         </p>
-
         <div className="size-3 shrink-0 rounded-full border-2 border-[#C7C7C7] bg-[linear-gradient(180deg,#F0F4FE_30%,#3C63C5_100%)] lg:size-7" />
       </div>
     ))}

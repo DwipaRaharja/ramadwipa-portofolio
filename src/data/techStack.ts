@@ -1,13 +1,13 @@
 import type { ComponentType, SVGProps } from "react";
 import {
-  SiPhp,
-  SiMysql,
-  SiTailwindcss,
-  SiLaravel,
   SiGithub,
   SiInertia,
-  SiTypescript,
   SiJavascript,
+  SiLaravel,
+  SiMysql,
+  SiPhp,
+  SiTailwindcss,
+  SiTypescript,
 } from "@icons-pack/react-simple-icons";
 
 export interface TechItem {

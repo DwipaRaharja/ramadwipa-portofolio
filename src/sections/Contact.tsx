@@ -1,8 +1,8 @@
 import type { FormEvent } from "react";
 import {
-  EnvelopeSimpleIcon,
   PaperPlaneTiltIcon,
   WhatsappLogoIcon,
+  MailboxIcon,
 } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import DecorativeGlow from "../components/ui/DecorativeGlow";
@@ -13,7 +13,7 @@ const whatsappNumber = "62877767444538";
 const inputClassName =
   "w-full rounded-2xl border-2 border-primary bg-transparent px-4 py-3 text-sm text-text-main outline-none transition-shadow placeholder:text-text-muted/60 focus:shadow-[0_0_0_3px_rgba(60,99,197,0.14)] sm:text-base";
 
-function Contact() {
+const Contact = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -36,7 +36,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-10"
+      className="relative isolate scroll-mt-24 overflow-hidden px-4 py-24 sm:px-6 lg:px-10"
     >
       <DecorativeGlow
         initial={{
@@ -177,7 +177,7 @@ function Contact() {
             whileHover={{ y: -3 }}
             className="border-primary text-primary focus-visible:outline-primary flex items-center gap-4 rounded-2xl border-2 bg-white/20 px-5 py-4 transition-colors hover:bg-white/50 focus-visible:outline-2 focus-visible:outline-offset-2"
           >
-            <EnvelopeSimpleIcon className="size-10 shrink-0" weight="fill" />
+            <MailboxIcon className="size-10 shrink-0" weight="fill" />
             <span className="min-w-0">
               <strong className="block text-lg">My Email</strong>
               <span className="block truncate text-xs sm:text-sm">
@@ -209,6 +209,6 @@ function Contact() {
       </div>
     </section>
   );
-}
+};
 
 export default Contact;

@@ -1,79 +1,16 @@
 import { motion } from "motion/react";
 import { HandWavingIcon, PlayCircleIcon } from "@phosphor-icons/react";
-import type { IconProps } from "@phosphor-icons/react";
-import type { ComponentType } from "react";
-import socialLink from "../data/socialLink";
 import DecorativeGlow from "../components/ui/DecorativeGlow";
-import SkillItems from "../data/skillItems";
-
-const IconWrapper = ({ Icon }: { Icon: ComponentType<IconProps> }) => (
-  <>
-    <span className="relative block size-7 lg:size-8">
-      {/* Ikon bold */}
-      <motion.span
-        className="absolute inset-0 block"
-        variants={{
-          rest: {
-            opacity: 1,
-            scale: 1,
-          },
-          hover: {
-            opacity: 0,
-            scale: 0.85,
-          },
-          focus: {
-            opacity: 0,
-            scale: 0.85,
-          },
-          tap: {
-            opacity: 0,
-            scale: 0.85,
-          },
-        }}
-        transition={{
-          duration: 0.2,
-          ease: "easeOut",
-        }}
-      >
-        <Icon className="size-full fill-current" weight="bold" />
-      </motion.span>
-
-      {/* Ikon fill */}
-      <motion.span
-        className="absolute inset-0 block"
-        variants={{
-          rest: {
-            opacity: 0,
-            scale: 0.85,
-          },
-          hover: {
-            opacity: 1,
-            scale: 1,
-          },
-          focus: {
-            opacity: 1,
-            scale: 1,
-          },
-          tap: {
-            opacity: 1,
-            scale: 1,
-          },
-        }}
-        transition={{
-          duration: 0.2,
-          ease: "easeOut",
-        }}
-      >
-        <Icon className="size-full fill-current" weight="fill" />
-      </motion.span>
-    </span>
-  </>
-);
+import SocialLinks from "../components/ui/SocialLinks";
+import SkillItems from "../components/ui/SkillItems";
 
 const Hero = () => {
   return (
     <>
-      <section className="relative mb-10 overflow-hidden px-10 pt-24 pb-2 sm:px-6 sm:pb-24 md:min-h-screen lg:pb-5">
+      <section
+        id="home"
+        className="relative mb-10 scroll-mt-24 overflow-hidden px-4 pt-24 pb-2 sm:px-6 sm:pb-24 md:min-h-screen lg:px-10 lg:pb-5"
+      >
         {/* decoration circle */}
         <DecorativeGlow
           className="top-36 -right-24 size-48 sm:right-0 sm:size-56 lg:top-40 lg:right-50 lg:size-64"
@@ -240,28 +177,13 @@ const Hero = () => {
               }}
               className="order-3 max-w-full justify-self-center lg:justify-self-start"
             >
-              <ul className="border-primary text-primary flex items-center justify-center gap-2 rounded-full border-3 bg-white/12 px-3 py-2 sm:gap-4 sm:px-5 sm:py-3">
-                {socialLink.map((link) => (
-                  <li key={link.href}>
-                    <motion.a
-                      href={link.href}
-                      aria-label={link.ariaLabel}
-                      initial="rest"
-                      animate="rest"
-                      whileHover="hover"
-                      whileFocus="focus"
-                      whileTap="tap"
-                    >
-                      <IconWrapper Icon={link.icon} />
-                    </motion.a>
-                  </li>
-                ))}
-              </ul>
+              <SocialLinks className="bg-white/12" />
             </motion.div>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:mt-6">
-            <motion.button
+            <motion.a
+              href="#projects"
               initial={{
                 opacity: 0,
                 scale: 0.85,
@@ -291,8 +213,9 @@ const Hero = () => {
             >
               My Project
               <PlayCircleIcon className="size-7" weight="fill" />
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="#about"
               initial={{
                 opacity: 0,
                 scale: 0.85,
@@ -322,7 +245,7 @@ const Hero = () => {
             >
               About Me
               <PlayCircleIcon className="size-7" weight="fill" />
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </section>

@@ -1,14 +1,14 @@
 import techStack from "../data/techStack";
 import { motion } from "motion/react";
 
-function AboutMe() {
+const AboutMe = () => {
   return (
     <section
-      id="AboutMe"
-      className="relative min-h-screen overflow-hidden px-10 pt-24 pb-2 sm:px-28 sm:pb-24 lg:pb-5"
+      id="about"
+      className="relative min-h-screen scroll-mt-24 overflow-hidden px-4 pt-24 pb-16 sm:px-6 sm:pb-24 lg:px-10 lg:pb-20"
     >
       {/* Layout content */}
-      <div className="flex flex-col items-center gap-24 lg:flex-row">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-16 lg:flex-row lg:gap-24">
         <div className="flex flex-col items-center justify-center gap-10">
           <motion.h2
             initial={{
@@ -147,6 +147,6 @@ function AboutMe() {
       </div>
     </section>
   );
-}
+};
 
 export default AboutMe;
